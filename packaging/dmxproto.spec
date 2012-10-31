@@ -1,21 +1,21 @@
-Name:     dmxproto
-Summary:  X.Org X11 Protocol dmxproto
-Version:  2.3.1
-Release:  1
-Group:    Development/System
-License:  MIT
-URL:      http://www.x.org
-Source0:  %{name}-%{version}.tar.gz
-Provides: dmxproto
+#
+# Please submit bugfixes or comments via http://bugs.tizen.org/
+#
 
-BuildRequires: pkgconfig
-BuildRequires: pkgconfig(xorg-macros)
+Name:           dmxproto
+Version:        2.3.1
+Release:        1
+License:        MIT
+Summary:        X
+Url:            http://www.x.org
+Group:          Development/System
+Source0:        %{name}-%{version}.tar.bz2
 
-# some file to be intalled can be ignored when rpm generates packages
-%define _unpackaged_files_terminate_build 0
+BuildRequires:  pkgconfig
+BuildRequires:  pkgconfig(xorg-macros)
 
 %description
-Description: %{summary}
+%{summary}.
 
 %prep
 %setup -q
@@ -27,20 +27,15 @@ Description: %{summary}
              --libdir=%{_datadir} \
              --without-xmlto
 
-# Call make instruction with smp support
-make %{?jobs:-j%jobs}
+make %{?_smp_mflags}
 
 %install
-rm -rf %{buildroot}
 %make_install
 
 %remove_docs
 
-%clean
-rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
 %{_includedir}/X11/extensions/*.h
 %{_datadir}/pkgconfig/*.pc
 
