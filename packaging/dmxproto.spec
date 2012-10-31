@@ -1,7 +1,3 @@
-#
-# Please submit bugfixes or comments via http://bugs.tizen.org/
-#
-
 Name:           dmxproto
 Version:        2.3.1
 Release:        1
@@ -21,9 +17,7 @@ BuildRequires:  pkgconfig(xorg-macros)
 %setup -q
 
 %build
-
-./autogen.sh
-%reconfigure --disable-static \
+%configure --disable-static \
              --libdir=%{_datadir} \
              --without-xmlto
 
