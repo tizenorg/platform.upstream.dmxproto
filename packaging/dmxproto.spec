@@ -2,16 +2,16 @@ Name:           dmxproto
 Version:        2.3.1
 Release:        1
 License:        MIT
-Summary:        X
+Summary:        X.org DMXProto protocol headers
 Url:            http://www.x.org
-Group:          Development/System
+Group:          Development/X11 Protocols
 Source0:        %{name}-%{version}.tar.bz2
-
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(xorg-macros)
+BuildArch:      noarch
 
 %description
-%{summary}.
+X.org DMXProto protocol headers.
 
 %prep
 %setup -q
