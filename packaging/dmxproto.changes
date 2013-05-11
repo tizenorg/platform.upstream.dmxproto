@@ -1,3 +1,6 @@
+* Sat May 11 2013 Anas Nashif <anas.nashif@intel.com> submit/tizen/20130509.173832@d91f554
+- Set license using %license
+
 * Thu Feb 07 2013 Anas Nashif <anas.nashif@intel.com> upstream/2.3.1@eef3910
 - Cleanup spec to satisfy rpmlint
 
