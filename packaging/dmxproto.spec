@@ -6,6 +6,7 @@ Summary:        X.org DMXProto protocol headers
 Url:            http://www.x.org
 Group:          Development/X11 Protocols
 Source0:        %{name}-%{version}.tar.bz2
+Source1001: 	dmxproto.manifest
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(xorg-macros)
 BuildArch:      noarch
@@ -15,6 +16,7 @@ X.org DMXProto protocol headers.
 
 %prep
 %setup -q
+cp %{SOURCE1001} .
 
 %build
 %configure --disable-static \
@@ -30,6 +32,7 @@ make %{?_smp_mflags}
 
 
 %files
+%manifest %{name}.manifest
 %license COPYING
 %{_includedir}/X11/extensions/*.h
 %{_datadir}/pkgconfig/*.pc
