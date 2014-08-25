@@ -1,12 +1,12 @@
 Name:           dmxproto
 Version:        2.3.1
-Release:        1
+Release:        0
 License:        MIT
 Summary:        X.org DMXProto protocol headers
-Url:            http://www.x.org
+Url:            http://cgit.freedesktop.org/xorg/proto/dmxproto/
 Group:          Development/X11 Protocols
 Source0:        %{name}-%{version}.tar.bz2
-Source1001: 	dmxproto.manifest
+Source1001:     dmxproto.manifest
 BuildRequires:  pkgconfig
 BuildRequires:  pkgconfig(xorg-macros)
 BuildArch:      noarch
@@ -23,7 +23,7 @@ cp %{SOURCE1001} .
              --libdir=%{_datadir} \
              --without-xmlto
 
-make %{?_smp_mflags}
+%__make %{?_smp_mflags}
 
 %install
 %make_install
